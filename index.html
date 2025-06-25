@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线英文词典，快速查询英文单词释义、发音和例句">
+    <meta name="keywords" content="英文词典,在线词典,英语翻译,单词查询">
+    <title>📖 在线英文词典 - 免费单词查询</title>
+    
+    <!-- PWA配置 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%234CAF50'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='white' font-size='30'%3E📖%3C/text%3E%3C/svg%3E">
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 页面加载动画 -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>加载中...</p>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    在线英文词典
+                </h1>
+                <p class="subtitle">快速查询英文单词释义、发音和例句</p>
+            </div>
+        </header>
+
+        <!-- 搜索区域 -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="wordInput" 
+                        class="search-input" 
+                        placeholder="输入英文单词，如：hello, beautiful, knowledge..."
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                    <button id="searchBtn" class="search-btn" type="button">
+                        <span class="btn-text">查询</span>
+                        <span class="btn-loading">🔄</span>
+                    </button>
+                </div>
+                
+                <div class="search-actions">
+                    <button id="clearBtn" class="clear-btn">清除</button>
+                    <button id="randomBtn" class="random-btn">随机单词</button>
+                </div>
+                
+                <!-- 搜索建议 -->
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+        </section>
+
+        <!-- 结果区域 -->
+        <section class="result-section">
+            <div id="result" class="result-container"></div>
+        </section>
+
+        <!-- 历史记录 -->
+        <section class="history-section">
+            <div class="history-header">
+                <h3>🕒 查询历史</h3>
+                <button id="clearHistoryBtn" class="clear-history-btn">清空历史</button>
+            </div>
+            <div id="history" class="history-container"></div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 在线英文词典 | 数据来源: <a href="https://dictionaryapi.dev" target="_blank">Free Dictionary API</a></p>
+            <p>开源项目，可部署到 GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="back-to-top" title="返回顶部">↑</button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

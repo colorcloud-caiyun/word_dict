@@ -1,0 +1,16 @@
+# GitHub Pages Jekyll配置
+title: "在线英文词典"
+description: "免费在线英文词典，快速查询英文单词释义、发音和例句"
+url: "https://yourusername.github.io"
+baseurl: "/dict"
+
+# 插件
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# 排除文件
+exclude:
+  - README.md
+  - .gitignore
+  - .github/
